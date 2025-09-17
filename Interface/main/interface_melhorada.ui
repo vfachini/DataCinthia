@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Gerenciador de Pinturas</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #f5f5f5;
+}
+
+QTabWidget::pane {
+    border: 1px solid #c0c0c0;
+    background-color: white;
+}
+
+QTabBar::tab {
+    background-color: #e1e1e1;
+    border: 1px solid #c0c0c0;
+    padding: 8px 20px;
+    margin-right: 2px;
+    font: bold 11pt "Segoe UI";
+}
+
+QTabBar::tab:selected {
+    background-color: white;
+    border-bottom-color: white;
+}
+
+QPushButton {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font: bold 10pt "Segoe UI";
+}
+
+QPushButton:hover {
+    background-color: #106ebe;
+}
+
+QPushButton:pressed {
+    background-color: #005a9e;
+}
+
+QPushButton#addButton {
+    background-color: #107c10;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+QPushButton#addButton:hover {
+    background-color: #0e6e0e;
+}
+
+QTableView {
+    background-color: white;
+    alternate-background-color: #f9f9f9;
+    selection-background-color: #0078d4;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+}
+
+QTableView::item {
+    padding: 8px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+QFrame#detailsFrame {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+QLabel#titleLabel {
+    font: bold 16pt "Segoe UI";
+    color: #323130;
+    margin-bottom: 8px;
+}
+
+QLabel#detailLabel {
+    font: 10pt "Segoe UI";
+    color: #605e5c;
+    margin: 4px 0;
+}
+
+QLabel#valueLabel {
+    font: 10pt "Segoe UI";
+    color: #323130;
+    margin: 4px 0;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>16</number>
+    </property>
+    <property name="topMargin">
+     <number>16</number>
+    </property>
+    <property name="rightMargin">
+     <number>16</number>
+    </property>
+    <property name="bottomMargin">
+     <number>16</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="Aba_Pinturas">
+       <attribute name="title">
+        <string>Pinturas</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="paintingsLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>16</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>16</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="leftPanel">
+          <property name="minimumSize">
+           <size>
+            <width>600</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="leftPanelLayout">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="toolbarFrame">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <layout class="QHBoxLayout" name="toolbarLayout">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>🔍 Buscar</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="toolbarSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>+</string>
+                </property>
+                <property name="objectName">
+                 <string>addButton</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableView" name="tableView">
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="actionButtonsFrame">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <layout class="QHBoxLayout" name="actionButtonsLayout">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="pushButton_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>📂 Abrir</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_4">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>✏️ Editar</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_excluirpintura">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #d13438;
+}
+
+QPushButton:hover {
+    background-color: #b71c1c;
+}</string>
+                </property>
+                <property name="text">
+                 <string>🗑️ Excluir</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="actionButtonsSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="rightPanel">
+          <property name="minimumSize">
+           <size>
+            <width>350</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="rightPanelLayout">
+           <property name="spacing">
+            <number>16</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="detailsFrame">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <layout class="QVBoxLayout" name="detailsLayout">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_15">
+                <property name="text">
+                 <string>Selecione uma pintura</string>
+                </property>
+                <property name="objectName">
+                 <string>titleLabel</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="imageFrame">
+                <property name="minimumSize">
+                 <size>
+                  <width>300</width>
+                  <height>200</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>300</width>
+                  <height>300</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QFrame {
+    background-color: #f9f9f9;
+    border: 2px dashed #d1d1d1;
+    border-radius: 8px;
+}</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <layout class="QVBoxLayout" name="imageLayout">
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>🖼️ Imagem</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+    font: 14pt "Segoe UI";
+    color: #8a8886;
+    border: none;
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QScrollArea" name="detailsScrollArea">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>330</width>
+                   <height>200</height>
+                  </rect>
+                 </property>
+                 <layout class="QFormLayout" name="detailsFormLayout">
+                  <property name="horizontalSpacing">
+                   <number>12</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>8</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>Título:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_8">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string>Tamanho:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="label_9">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_4">
+                    <property name="text">
+                     <string>Data:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="label_10">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_5">
+                    <property name="text">
+                     <string>Técnica:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLabel" name="label_11">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_6">
+                    <property name="text">
+                     <string>Série:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLabel" name="label_12">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_7">
+                    <property name="text">
+                     <string>Exposições:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QLabel" name="label_13">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Aba_exposicao">
+       <attribute name="title">
+        <string>Exposições</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="expositionsLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>16</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>16</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="leftPanelExpo">
+          <property name="minimumSize">
+           <size>
+            <width>600</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="leftPanelExpoLayout">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="toolbarFrameExpo">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <layout class="QHBoxLayout" name="toolbarExpoLayout">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="pushButton_11">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>🔍 Buscar</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="toolbarExpoSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_12">
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>+</string>
+                </property>
+                <property name="objectName">
+                 <string>addButton</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableView" name="tableView_3">
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="actionButtonsFrameExpo">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <layout class="QHBoxLayout" name="actionButtonsExpoLayout">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="pushButton_13">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>📂 Abrir</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_14">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>✏️ Editar</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_15">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>36</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #d13438;
+}
+
+QPushButton:hover {
+    background-color: #b71c1c;
+}</string>
+                </property>
+                <property name="text">
+                 <string>🗑️ Excluir</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="actionButtonsExpoSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="rightPanelExpo">
+          <property name="minimumSize">
+           <size>
+            <width>350</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="rightPanelExpoLayout">
+           <property name="spacing">
+            <number>16</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="detailsFrameExpo">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <layout class="QVBoxLayout" name="detailsExpoLayout">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_45">
+                <property name="text">
+                 <string>Selecione uma exposição</string>
+                </property>
+                <property name="objectName">
+                 <string>titleLabel</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="imageFrameExpo">
+                <property name="minimumSize">
+                 <size>
+                  <width>300</width>
+                  <height>200</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>300</width>
+                  <height>300</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QFrame {
+    background-color: #f9f9f9;
+    border: 2px dashed #d1d1d1;
+    border-radius: 8px;
+}</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <layout class="QVBoxLayout" name="imageExpoLayout">
+                 <item>
+                  <widget class="QLabel" name="label_18">
+                   <property name="text">
+                    <string>🖼️ Imagem</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+    font: 14pt "Segoe UI";
+    color: #8a8886;
+    border: none;
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QScrollArea" name="detailsScrollAreaExpo">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContentsExpo">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>330</width>
+                   <height>240</height>
+                  </rect>
+                 </property>
+                 <layout class="QFormLayout" name="detailsFormExpoLayout">
+                  <property name="horizontalSpacing">
+                   <number>12</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>8</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_31">
+                    <property name="text">
+                     <string>Título:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_42">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_32">
+                    <property name="text">
+                     <string>Tema:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="label_33">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_34">
+                    <property name="text">
+                     <string>Data:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="label_35">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_36">
+                    <property name="text">
+                     <string>Nº de obras:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLabel" name="label_37">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_38">
+                    <property name="text">
+                     <string>Curadoria:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLabel" name="label_39">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_16">
+                    <property name="text">
+                     <string>Local:</string>
+                    </property>
+                    <property name="objectName">
+                     <string>detailLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QLabel" name="label_17">
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="objectName">
+                     <string>valueLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Séries</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="seriesLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>16</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>16</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="seriesPlaceholder">
+          <property name="text">
+           <string>🎨 Aba Séries em desenvolvimento...</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    font: 16pt "Segoe UI";
+    color: #8a8886;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPinturas">
+    <property name="title">
+     <string>Pinturas</string>
+    </property>
+    <addaction name="actionBuscar"/>
+    <addaction name="actionAbir"/>
+    <addaction name="separator"/>
+    <addaction name="actionAdicionar"/>
+    <addaction name="actionEditar"/>
+    <addaction name="actionExcluir"/>
+   </widget>
+   <widget class="QMenu" name="menuExposi_es">
+    <property name="title">
+     <string>Exposições</string>
+    </property>
+    <addaction name="actionNova_Exposi_o"/>
+    <addaction name="actionExposi_es"/>
+   </widget>
+   <widget class="QMenu" name="menuS_rie">
+    <property name="title">
+     <string>Série</string>
+    </property>
+    <addaction name="actionAdicionar_s_rie"/>
+   </widget>
+   <addaction name="menuPinturas"/>
+   <addaction name="menuExposi_es"/>
+   <addaction name="menuS_rie"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionBuscar">
+   <property name="text">
+    <string>Buscar...</string>
+   </property>
+  </action>
+  <action name="actionAdicionar">
+   <property name="text">
+    <string>Adicionar</string>
+   </property>
+  </action>
+  <action name="actionEditar">
+   <property name="text">
+    <string>Editar</string>
+   </property>
+  </action>
+  <action name="actionExcluir">
+   <property name="text">
+    <string>Excluir</string>
+   </property>
+  </action>
+  <action name="actionAbir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionNova_Exposi_o">
+   <property name="text">
+    <string>Nova Exposição</string>
+   </property>
+  </action>
+  <action name="actionExposi_es">
+   <property name="text">
+    <string>Exposições</string>
+   </property>
+  </action>
+  <action name="actionAdicionar_s_rie">
+   <property name="text">
+    <string>Adicionar série</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

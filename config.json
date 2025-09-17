@@ -1,0 +1,13 @@
+{
+    "biblioteca_path": "C:\\Users\\virtu\\Desktop\\EDU\\Programação\\DB\\Bibliotecas",
+    "database_path": "C:\\Users\\virtu\\Desktop\\EDU\\Programação\\DB\\Data\\Data.db",
+    "backup_enabled": true,
+    "auto_create_folders": true,
+    "window_size": {
+        "width": 1200,
+        "height": 800
+    },
+    "window_maximized": false,
+    "theme": "default",
+    "language": "pt_BR"
+}
